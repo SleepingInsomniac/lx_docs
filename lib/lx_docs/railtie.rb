@@ -23,6 +23,10 @@ module LxDocs
             controllers = versions[defined_in][:controllers]
 
             action_name = route.defaults[:action].to_sym
+            unless controller_class.instance_methods.include?(action_name)
+              puts "Warning: #{route.verb} #{route.path.spec.to_s} was declared but not defined as #{controller_class.to_s}##{action_name}"
+              next
+            end
             action_method = controller_class.instance_method(action_name)
 
             controllers[controller_path] ||= {
