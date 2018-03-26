@@ -9,7 +9,6 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Alex Clink"]
   spec.email         = ["code@alexclink.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
   spec.summary       = "Generate docs for your rails api"
   spec.description   = "Automatically gathers your routes into a machine readable json file and provides a DSL for docs"
   spec.homepage      = "https://pixelfaucet.com/software/rails_api_docs"

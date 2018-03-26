@@ -1,0 +1,17 @@
+LxDocs::UseCase.add('<%= title %>', '<%= version %>', '<%= controller %>', :<%= action %>) do
+  description "Add a description"
+
+  example "api/v1/shoes?page=1&limit=10"
+
+  response 200
+  response 403, { error: 'Forbidden' }.to_json, "When the user is not logged in"
+
+  includes 'pagination'
+end
+
+LxDocs::UseCase.add('<%= title %>', '<%= version %>') do
+  <%- parameters.each do |param| %>
+  parameter :page, type: 'integer', default: 1
+  parameter :limit, type: 'integer', default: 10
+  <%- end %>
+end
